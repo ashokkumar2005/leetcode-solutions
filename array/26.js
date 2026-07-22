@@ -3,20 +3,36 @@
 
 
 
+// var removeDuplicates = function(nums) {
+
+//    let left =0 ;
+//     for(let right = 1 ; right<nums.length; right++ ){
+
+//         if( nums[left] != nums[right] ){
+//            nums[left +1] = nums[right];
+//            left++ 
+//         }
+//     }
+//     console.log(left+1);
+    
+// };
 var removeDuplicates = function(nums) {
 
-   let left =0 ;
-    for(let right = 1 ; right<nums.length; right++ ){
+  let left =0 ;
 
-        if( nums[left] != nums[right] ){
-           nums[left +1] = nums[right];
-           left++ 
-        }
+  for( let i=1 ; i<nums.length ; i++){
+    if(nums[left] !== nums[i]){
+        nums[left+1] = nums[i];
+        
+        left++;
     }
-    console.log(left+1);
-    
-};
+  }
+  return left+1;
+  console.log(nums) ;
 
+
+}
 let nums = [0,0,1,1,1,2,2,3,3,4,5];
 
-removeDuplicates(nums)
+res = removeDuplicates(nums);
+console.log(res)
