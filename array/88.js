@@ -5,6 +5,26 @@
  let m=3;
  let n = 3;
 
+  const MergesortWhile = (arr1,arr2,m,n)=>{
+
+    let i = m-1;
+    let j = n-1;
+    let k = m+n-1;
+
+    while(j>=0){
+        if(i>=0 && arr1[i]>arr2[j] ){
+            arr1[k] = arr1[i];
+            k--;
+            i--;
+        }else{
+            arr1[k] = arr2[j];
+            k--;
+            j--;
+        }
+    }
+    return arr1;
+  }
+
  const mergesort =(arr1,m,arr2,n)=>{
 
     let res =[];
@@ -26,6 +46,9 @@
 
  }
  
- mergesort(arr1,m,arr2,n)
+  mergesort(arr1,m,arr2,n)
+
+  let res = MergesortWhile(arr1,arr2,m,n);
+  console.log(res);
 
 
